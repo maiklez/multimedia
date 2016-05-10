@@ -1,0 +1,15 @@
+{
+    "name": "maiklez/multimedia",
+    "description": "modulo almacenamiento multimedia. cms.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MAik.rocks",
+            "email": "maik.ledzep@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    	"nesbot/carbon": "~1.14",
+    }
+}
