@@ -65,7 +65,6 @@
 		       
 		       {!! Form::open(array('route'=>['evento.store'], 'enctype' => 'multipart/form-data', 'files'=>true, 'class'=>"form-horizontal")) !!}
 		       
-		        	{!! csrf_field() !!}
 		        	
 		        	
 		        	@include('multimedia::eventos/_form')

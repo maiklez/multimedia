@@ -65,7 +65,6 @@
 
 		       	{!! Form::open(array('route'=>['evento.update', $evento->id], 'enctype' => 'multipart/form-data', 'files'=>true, 'class'=>'form-horizontal')) !!}
 		        	<input name="_method" type="hidden" value="PUT">
-		        	{!! csrf_field() !!}
 		        	
 		        	
 		       @include('multimedia::eventos/_form')

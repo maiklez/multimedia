@@ -72,12 +72,15 @@
             </div>
             
             <div class="form-group">
-                <label for="imagen" class="col-sm-3 control-label">Imagen del Evento</label>
                 @if(isset($evento) && !is_null($evento->imagen))
-                	<img alt="{!! $evento->title !!}" src="{!! $evento->imagen !!}">
+                	<div class="col-sm-12" style=" text-align: center;">
+                		<img  alt="{!! $evento->title !!}" src="{!! asset($evento->imagen) !!}" style="  max-width: 300px;">
+                	</div>
                 @endif
                 
-                <div class="col-sm-6">
+                <label for="imagen" class="col-sm-3 control-label">Imagen del Evento</label>                
+                
+                <div class="col-sm-6" style="padding-top: 7px;">
             		<input type="file" id="imagen" name="imagen" />
            		</div>                
             </div>
