@@ -62,8 +62,9 @@
 		       	<div class="form-group">
 		       		@include('partials.notifications')
 		       	</div>
-		       
-				<form action="{{ route('evento.update', $evento->id) }}" method="POST" class="form-horizontal">
+
+		       	{!! Form::open(array('route'=>['evento.update', $evento->id)], 'enctype' => 'multipart/form-data', 'files'=>true, 'class'=>"form-horizontal")) !!}
+		       	
 		        	<input name="_method" type="hidden" value="PUT">
 		        	{!! csrf_field() !!}
 		        	

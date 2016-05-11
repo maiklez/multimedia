@@ -63,7 +63,8 @@
 		       		@include('partials.notifications')
 		       	</div>
 		       
-				<form action="{{ route('evento.store') }}" method="POST" class="form-horizontal">
+		       {!! Form::open(array('route'=>['evento.store'], 'enctype' => 'multipart/form-data', 'files'=>true, 'class'=>"form-horizontal")) !!}
+		       
 		        	{!! csrf_field() !!}
 		        	
 		        	

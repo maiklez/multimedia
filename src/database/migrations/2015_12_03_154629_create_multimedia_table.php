@@ -39,8 +39,13 @@ class CreateMultimediaTable extends Migration
     			
     			$table->string ( 'title' );
     			$table->text('texto_h');
+    			$table->string('imagen')->nullable ();
     			$table->date ( 'fecha_inicio' );
+    			$table->time ( 'hora_inicio' )->nullable ();
+    			
     			$table->date ( 'fecha_fin' )->nullable ();
+    			$table->time ( 'hora_fin' )->nullable ();
+    			
     			$table->string('tipo')->nullable ();	//concierto, charla
     			$table->timestamps ();
     		} );

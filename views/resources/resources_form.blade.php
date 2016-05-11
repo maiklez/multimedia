@@ -11,17 +11,7 @@
 		<input type="hidden" name="_token" value="{!! csrf_token() !!}" />
 		<!-- ./ csrf token -->
 
-		<div class="row form-group">
-			<div class="col s6">
-			{!! 
-					Form::select('webpage', 
-					array(null => 'Please select one option') + BarService::getWebPageList(),
-					null, 
-					array('class'=>'','style'=>'display: block;'))
-					!!} 
-					
-			</div>
-		</div>	
+		
 <style>
   #progress_bar {
     margin: 10px 0;
