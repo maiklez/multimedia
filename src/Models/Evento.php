@@ -25,11 +25,11 @@ class Evento extends Model {
 	}
 	
 	public static function storeAttributes(Request $req){
-		$file = $req->file('files');
+		$file = $req->file('imagen');
 		$nameFile=null;
 		
 		if(!is_null($file)){
-			$nameFile = '/uploads/albums/'. urlencode($album->title) . '/';
+			$nameFile = '/uploads/eventos/';
 			
 			$destinationPath = storage_path().$nameFile;
 			$filename = $file->getClientOriginalName();
