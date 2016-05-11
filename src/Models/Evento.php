@@ -26,7 +26,6 @@ class Evento extends Model {
 	
 	public static function storeAttributes(Request $req){
 		$file = $req->file('imagen');
-		$nameFile=null;
 		
 		if(!is_null($file)){
 			$nameFile = '/uploads/eventos/';
@@ -36,18 +35,26 @@ class Evento extends Model {
 			$file->move($destinationPath, $filename);
 				
 			$nameFile .= $filename;
+			
+			return [
+					'title' => $req->input('title'),
+					'fecha_inicio' => $req->input('fecha_inicio'),
+					'hora_inicio' => $req->input('hora_inicio'),
+					'fecha_fin' => $req->input('fecha_fin'),
+					'hora_fin' => $req->input('hora_fin'),
+					'texto_h' => $req->input('texto_h'),
+					'imagen' => $nameFile,
+			];
+		}else{
+			return [
+					'title' => $req->input('title'),
+					'fecha_inicio' => $req->input('fecha_inicio'),
+					'hora_inicio' => $req->input('hora_inicio'),
+					'fecha_fin' => $req->input('fecha_fin'),
+					'hora_fin' => $req->input('hora_fin'),
+					'texto_h' => $req->input('texto_h'),
+			];
 		}
-		
-		
-		return [
-				'title' => $req->input('title'),
-				'fecha_inicio' => $req->input('fecha_inicio'),
-				'hora_inicio' => $req->input('hora_inicio'),
-				'fecha_fin' => $req->input('fecha_fin'),
-				'hora_fin' => $req->input('hora_fin'),
-				'texto_h' => $req->input('texto_h'),
-				'imagen' => $nameFile,
-		];
 	
 	}
 }
