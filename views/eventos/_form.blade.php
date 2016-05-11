@@ -56,28 +56,30 @@
                 </div>                
             </div>
             
-            <div class="form-group">
-                <label for="imagen" class="col-sm-3 control-label">Imagen del Evento</label>
-                @if(isset($evento)&&$ !is_null(evento->imagen))
-                	<img alt="{!! $evento->title !!}" src="{!! $evento->imagen !!}">
-                @endif
-                
-                <div class="col-sm-6">
-            		<input type="file" id="imagen" name="imagen" />
-           		</div>                
-            </div>
+            
             
             <!-- hora fin-->
             <div class="form-group">
                 <label for="evento-hora_fin" class="col-sm-3 control-label">hora_fin</label>
 
                 <div class="col-sm-6">                    
-		    			{!! Form::date('hora_fin', old('hora_fin', isset($evento) ? $evento->hora_fin : null), 
+		    			{!! Form::time('hora_fin', old('hora_fin', isset($evento) ? $evento->hora_fin : null), 
 		    													array('class'=>'form-control', 'id'=>'evento-hora_fin',
 		    													'placeholder'=>'Hora fin',
 		    													'style'=>'')) !!}
 		    			{!! $errors->first('hora_fin', '<span class="help-block">:message</span>') !!}									   
                 </div>                
+            </div>
+            
+            <div class="form-group">
+                <label for="imagen" class="col-sm-3 control-label">Imagen del Evento</label>
+                @if(isset($evento) && !is_null($evento->imagen))
+                	<img alt="{!! $evento->title !!}" src="{!! $evento->imagen !!}">
+                @endif
+                
+                <div class="col-sm-6">
+            		<input type="file" id="imagen" name="imagen" />
+           		</div>                
             </div>
             
 		<div class="form-group">            

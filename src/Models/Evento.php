@@ -13,7 +13,7 @@ class Evento extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['title', 'texto_h', 'imagen','fecha_inicio', 'fecha_fin', 'tipo'];
+	protected $fillable = ['title', 'texto_h', 'imagen','fecha_inicio', 'hora_inicio', 'fecha_fin', 'hora_fin', 'tipo'];
 	
 	public static $TIPO = [1 => 'Concierto', 2 => 'Charla'];
 	
