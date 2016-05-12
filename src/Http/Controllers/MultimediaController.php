@@ -71,7 +71,7 @@ class MultimediaController extends Controller
 			if(!empty($files)){
 				foreach ($files as $file){
 				    if(!is_null($file)){				    	
-				    	$nameFile = '/uploads/albums/'. urlencode($album->title) . '/';
+				    	$nameFile = '/uploads/albumes/'. urlencode($album->title) . '/';
 						$destinationPath = storage_path().$nameFile;
 							
 						$filename = $file->getClientOriginalName();
@@ -157,7 +157,7 @@ class MultimediaController extends Controller
 				foreach ($files as $file){
 				    if(!is_null($file)){				    	
 				    
-						$nameFile = '/uploads/albums/'. urlencode($album->title) . '/';
+						$nameFile = '/uploads/albumes/'. urlencode($album->title) . '/';
 						$destinationPath = storage_path().$nameFile;
 							
 						$filename = $file->getClientOriginalName();
