@@ -30,7 +30,7 @@
 
                 <div class="col-sm-6">                    
 		    			{{ Form::hidden('publicar', false) }}
-						{{ Form::checkbox('publicar', old('publicar', isset($album) ? $album->publicar : false), 
+						{{ Form::checkbox('publicar', old('publicar', isset($album) ? $album->publicar : false), null,
 		    													array('class'=>'form-control', 'id'=>'album-publicar',
 		    													'style'=>'')) }}
 
