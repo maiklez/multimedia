@@ -17,8 +17,9 @@ class CreateMultimediaTable extends Migration
     		Schema::create ( 'albumes', function (Blueprint $table) {
     			$table->increments ( 'id' )->unsigned ();
     			$table->string ( 'title' );
-    			$table->date ( 'fecha' );
-    			$table->text('texto_h');
+    			$table->date ( 'fecha' )->nullable ();
+    			$table->text('texto_h')->nullable ();
+    			$table->boolean('publicar')->default(false);
     			$table->timestamps ();
     		} );
 	    		

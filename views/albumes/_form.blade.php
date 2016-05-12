@@ -14,7 +14,7 @@
             
             <!-- fecha -->
             <div class="form-group">
-                <label for="album-title" class="col-sm-3 control-label">Fecha</label>
+                <label for="album-fecha" class="col-sm-3 control-label">Fecha</label>
 
                 <div class="col-sm-6">                    
 		    			{!! Form::date('fecha', old('title', isset($album) ? $album->fecha : null), 
@@ -25,6 +25,18 @@
                 </div>                
             </div>
             
+            <div class="form-group">
+                <label for="album-publicar" class="col-sm-3 control-label">Publicar</label>
+
+                <div class="col-sm-6">                    
+		    			{{ Form::hidden('publicar', false) }}
+						{{ Form::checkbox('publicar', old('publicar', isset($album) ? $album->publicar : false), 
+		    													array('class'=>'form-control', 'id'=>'album-publicar',
+		    													'style'=>'')) }}
+
+		    			{!! $errors->first('publicar', '<span class="help-block">:message</span>') !!}									   
+                </div>                
+            </div>
             
             <div class="form-group">            
                 <div class="col-sm-12">             

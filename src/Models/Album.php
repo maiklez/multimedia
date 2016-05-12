@@ -14,7 +14,7 @@ class Album extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['title', 'texto_h', 'fecha'];
+	protected $fillable = ['title', 'texto_h', 'fecha', 'publicar'];
 	
 	
 	
@@ -38,6 +38,7 @@ class Album extends Model {
 				'title' => $req->input('title'),
 				'fecha' => $req->input('fecha'),
 				'texto_h' => $req->input('texto_h'),
+				'publicar' => $req->input('publicar'),
 		];
 		
 	}

@@ -16,10 +16,26 @@ Route::group(['middleware' => 'web'], function () {
 	
 	//Route::post('post/{id}/addComment', 'MaikBlogController@addComment')->name('add_comment')->middleware(['auth']);
 	
-	//get the images from storage
-	Route::get('uploads/{albumname}/{filename}', function ($albumname, $filename)
+	//get the images of the albums from storage
+	Route::get('uploads/albumes/{albumname}/{filename}', function ($albumname, $filename)
 	{
-		$path = storage_path() .'/uploads/'.$albumname. '/' . $filename;
+		$path = storage_path() .'/uploads/albumes/'.$albumname. '/' . $filename;
+	
+		if(!File::exists($path)) abort(404);
+	
+		$file = File::get($path);
+		$type = File::mimeType($path);
+	
+		$response = Response::make($file, 200);
+		$response->header("Content-Type", $type);
+	
+		return $response;
+	});
+	
+	//get the images of the eventos from storage
+	Route::get('uploads/eventos/{filename}', function ($albumname, $filename)
+	{
+		$path = storage_path() .'/uploads/eventos/' . $filename;
 	
 		if(!File::exists($path)) abort(404);
 	
