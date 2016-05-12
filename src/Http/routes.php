@@ -33,7 +33,7 @@ Route::group(['middleware' => 'web'], function () {
 	});
 	
 	//get the images of the eventos from storage
-	Route::get('uploads/eventos/{filename}', function ($albumname, $filename)
+	Route::get('uploads/eventos/{filename}', function ($filename)
 	{
 		$path = storage_path() .'/uploads/eventos/' . $filename;
 	
