@@ -29,10 +29,10 @@
                 <label for="album-publicar" class="col-sm-3 control-label">Publicar</label>
 
                 <div class="col-sm-6">                    
-		    			{{ Form::hidden('publicar', false) }}
-						{{ Form::checkbox('publicar', old('publicar', isset($album) ? $album->publicar : false), null,
+		    			{!! Form::hidden('publicar', '0') !!}
+						{!! Form::checkbox('publicar', '1' ,old('publicar', isset($album) ? $album->publicar : false), 
 		    													array('class'=>'form-control', 'id'=>'album-publicar',
-		    													'style'=>'')) }}
+		    													'style'=>'box-shadow: none;')) }}
 
 		    			{!! $errors->first('publicar', '<span class="help-block">:message</span>') !!}									   
                 </div>                
