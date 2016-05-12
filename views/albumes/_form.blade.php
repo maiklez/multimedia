@@ -32,7 +32,7 @@
 		    			{!! Form::hidden('publicar', '0') !!}
 						{!! Form::checkbox('publicar', '1' ,old('publicar', isset($album) ? $album->publicar : false), 
 		    													array('class'=>'form-control', 'id'=>'album-publicar',
-		    													'style'=>'box-shadow: none;')) }}
+		    													'style'=>'box-shadow: none;')) !!}
 
 		    			{!! $errors->first('publicar', '<span class="help-block">:message</span>') !!}									   
                 </div>                
