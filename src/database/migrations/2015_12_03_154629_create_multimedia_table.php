@@ -64,6 +64,6 @@ class CreateMultimediaTable extends Migration
         //
     	Schema::drop ( 'resources' );
     	Schema::drop ( 'eventos' );
-    	Schema::drop ( 'album' );
+    	Schema::drop ( 'albumes' );
     }
 }
