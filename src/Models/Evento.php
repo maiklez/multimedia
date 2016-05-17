@@ -9,6 +9,13 @@ class Evento extends Model {
 	protected $table = 'eventos';
 	
 	/**
+	 * The attributes that should be mutated to dates.
+	 *
+	 * @var array
+	 */
+	protected $dates = ['created_at', 'updated_at', 'fecha_fin', 'fecha_inicio'];
+	
+	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
